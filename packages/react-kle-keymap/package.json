@@ -1,0 +1,40 @@
+{
+  "name": "@chrysalis-api/react-kle-keymap",
+  "version": "0.0.0",
+  "description": "React Keymap component for Chrysalis hardware libraries",
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/keyboardio/chrysalis-api"
+  },
+  "author": {
+    "name": "Gergely Nagy",
+    "email": "<algernon@keyboard.io>",
+    "url": "https://asylum.madhouse-project.org"
+  },
+  "license": "GPL-3.0-only",
+  "homepage": "https://github.com/keyboardio/chrysalis-api#readme",
+  "bugs": {
+    "url": "https://github.com/keyboardio/chrysalis-api/issues"
+  },
+  "keywords": [
+    "chrysalis",
+    "kaleidoscope"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "babel src/lib -d lib",
+    "lint": "eslint src/lib",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "react": "^16.5.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "@babel/preset-react": "^7.0.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
