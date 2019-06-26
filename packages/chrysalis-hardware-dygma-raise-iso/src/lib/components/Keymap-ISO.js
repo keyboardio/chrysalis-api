@@ -34,7 +34,7 @@ const led_map = [
   [19, 20, 21, 22, 23, 24, 25, XX,  XX, XX, 27+LEDS_LEFT_KEYS, 26+LEDS_LEFT_KEYS, 25+LEDS_LEFT_KEYS, 24+LEDS_LEFT_KEYS, 23+LEDS_LEFT_KEYS, 22 +LEDS_LEFT_KEYS],
   [26, 27, 28, 29, 30, XX, 31, 32,  35+LEDS_LEFT_KEYS, 34+LEDS_LEFT_KEYS, 33+LEDS_LEFT_KEYS, 32+LEDS_LEFT_KEYS, 31+LEDS_LEFT_KEYS, 30+LEDS_LEFT_KEYS, 29+LEDS_LEFT_KEYS, 28+LEDS_LEFT_KEYS]];
 
-class Keymap extends React.Component {
+class KeymapISO extends React.Component {
   render() {
     const keymap = this.props.keymap || Array(80).fill().map(() => 0);
 
@@ -86,7 +86,7 @@ class Keymap extends React.Component {
       >
 
 
-    <path id="neuron_outline" fill="none" stroke="#b4b4b4" stroke-width="1.5" d="M474.769 610.224a4.727 4.727 0 0 1-6.393 2.452l-48.517-23.03c-7.208-3.421-10.307-12.016-6.942-19.251l29.382-63.156a45.23 45.23 0 0 0 4.222-19.081v-30.984a10.493 10.493 0 0 1 10.493-10.494h55.413a10.494 10.494 0 0 1 10.494 10.494v30.984a45.23 45.23 0 0 0 4.221 19.081l29.382 63.156c3.366 7.235.267 15.83-6.942 19.251l-48.516 23.03a4.735 4.735 0 0 1-6.394-2.452l-.001-.002a10.78 10.78 0 0 0-19.901 0l-.001.002z"/>
+    <path id="neuron_outline" fill="none" stroke="#b4b4b4" strokeWidth="1.5" d="M474.769 610.224a4.727 4.727 0 0 1-6.393 2.452l-48.517-23.03c-7.208-3.421-10.307-12.016-6.942-19.251l29.382-63.156a45.23 45.23 0 0 0 4.222-19.081v-30.984a10.493 10.493 0 0 1 10.493-10.494h55.413a10.494 10.494 0 0 1 10.494 10.494v30.984a45.23 45.23 0 0 0 4.221 19.081l29.382 63.156c3.366 7.235.267 15.83-6.942 19.251l-48.516 23.03a4.735 4.735 0 0 1-6.394-2.452l-.001-.002a10.78 10.78 0 0 0-19.901 0l-.001.002z"/>
     <g id="keyshapes">
         <path id="underglow_outline" onClick={onClick} className="key" fill={getColor(0, 7)} color={getColor(0, 7)} stroke={stroke(0, 7)} strokeWidth={getStrokeWidth(0, 7)} data-led-index={getLEDIndex(0, 7)} data-key-index={keyIndex(0, 7)} data-layer={layer} d="M376.655 613.408c-2.562 11.219-12.541 19.176-24.049 19.176H47.609c-18.052 0-32.896-14.229-33.66-32.266L.79 289.393a44.722 44.722 0 0 1 8.468-28.132l23.261-32.097a35 35 0 0 0 6.658-20.534V22.197A21.446 21.446 0 0 1 60.624.75h907.353a21.45 21.45 0 0 1 21.447 21.447V208.63a35 35 0 0 0 6.658 20.534c6.418 8.86 16.188 22.336 23.318 32.174a44.727 44.727 0 0 1 8.47 27.963c-2.09 54.162-9.11 236.202-11.99 310.891-.69 18.088-15.56 32.392-33.661 32.392H620.181a24.668 24.668 0 0 1-23.995-18.943l-48.454-203.048a9.784 9.784 0 0 0-9.517-7.513H432.499a9.783 9.783 0 0 0-9.538 7.605l-46.306 202.723zm-10.198-4.83a15.798 15.798 0 0 1-15.419 12.357H47.977c-11.902 0-21.691-9.381-22.197-21.273L12.734 293.201a44.374 44.374 0 0 1 8.867-28.555l22.17-29.484a36.33 36.33 0 0 0 7.293-21.833V23.747c0-6.054 4.908-10.962 10.962-10.962h904.18c6.055 0 10.963 4.908 10.963 10.962v189.582a36.33 36.33 0 0 0 7.293 21.833c6.274 8.345 15.369 20.44 22.208 29.541a44.38 44.38 0 0 1 8.88 28.429c-2.22 55.682-9.65 242.889-12.18 306.467-.47 11.918-10.273 21.336-22.2 21.336H620.509a14.576 14.576 0 0 1-14.2-11.287l-46.895-202.441a20.61 20.61 0 0 0-20.077-15.959H431.476a20.61 20.61 0 0 0-20.115 16.12l-44.904 201.21z"/>
         <path id="neuron_led" onClick={onClick} className="key" fill={getColor(0, 8)} stroke={stroke(0, 8)} strokeWidth={getStrokeWidth(0, 8)} data-led-index={getLEDIndex(0, 8)} data-key-index={keyIndex(0, 8)} data-layer={layer} d="M454.516 509.962a1.11 1.11 0 0 1 .709-1.345l28.59-9.812c.23-.079.478-.08.709-.004l29.677 9.823c.562.186.878.779.721 1.349l-7.468 26.946c-.046.167-.13.32-.246.448l-22.196 24.568a1.109 1.109 0 0 1-1.664-.02l-21.142-24.555a1.114 1.114 0 0 1-.229-.427l-7.461-26.971zm10.649 4.674a1.11 1.11 0 0 1 .739-1.265l18.116-6.014c.223-.074.464-.076.688-.004l18.822 6.027c.533.171.855.711.751 1.261l-3.696 19.617a1.11 1.11 0 0 1-.401.664l-15.113 11.973a1.109 1.109 0 0 1-1.4-.018l-14.307-11.96a1.106 1.106 0 0 1-.377-.639l-3.822-19.642z"/>
@@ -116,8 +116,9 @@ class Keymap extends React.Component {
         <path onClick={onClick} className="key" id="R3C4_keyshape" fill={getColor(3, 4)} color={getColor(3, 4)} stroke={stroke(3, 4)} strokeWidth={getStrokeWidth(3, 4)} data-led-index={getLEDIndex(3, 4)} data-key-index={keyIndex(3, 4)} data-layer={layer} d="M308.726 206.575c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.852z"/>
         <path onClick={onClick} className="key" id="R3C3_keyshape" fill={getColor(3, 3)} color={getColor(3, 3)} stroke={stroke(3, 3)} strokeWidth={getStrokeWidth(3, 3)} data-led-index={getLEDIndex(3, 3)} data-key-index={keyIndex(3, 3)} data-layer={layer} d="M249.668 206.575c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.852z"/>
         <path onClick={onClick} className="key" id="R3C2_keyshape" fill={getColor(3, 2)} color={getColor(3, 2)} stroke={stroke(3, 2)} strokeWidth={getStrokeWidth(3, 2)} data-led-index={getLEDIndex(3, 2)} data-key-index={keyIndex(3, 2)} data-layer={layer} d="M190.61 206.575c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.852z"/>
-        <path onClick={onClick} className="key" id="R3C0_keyshape" fill={getColor(3, 0)} color={getColor(3, 0)} stroke={stroke(3, 0)} strokeWidth={getStrokeWidth(3, 0)} data-led-index={getLEDIndex(3, 0)} data-key-index={keyIndex(3, 0)} data-layer={layer} d="M60.552 206.576a5.257 5.257 0 0 1 5.256-5.257H177.66a5.257 5.257 0 0 1 5.256 5.257v40.851a5.257 5.257 0 0 1-5.256 5.257H65.808a5.257 5.257 0 0 1-5.256-5.257v-40.851z"/>
-        <path onClick={onClick} className="key" id="R2C15_keyshape" fill={getColor(1, 15)} color={getColor(1, 15)} stroke={stroke(1, 15)} strokeWidth={getStrokeWidth(1, 15)} data-led-index={getLEDIndex(1, 15)} data-key-index={keyIndex(1, 15)} data-layer={layer} d="M844.256 146.975a5.257 5.257 0 0 1 5.257-5.257h112.909a5.257 5.257 0 0 1 5.257 5.257v40.851a5.257 5.257 0 0 1-5.257 5.257H849.513a5.257 5.257 0 0 1-5.257-5.257v-40.851z"/>
+        <path onClick={onClick} className="key" id="R3C1_keyshape" fill={getColor(3, 1)} color={getColor(3, 1)} stroke={stroke(3, 1)} strokeWidth={getStrokeWidth(3, 1)} data-led-index={getLEDIndex(3, 1)} data-key-index={keyIndex(3, 1)} data-layer={layer} d="M131.552 206.575c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.852z"/>
+        <path onClick={onClick} className="key" id="R3C0_keyshape" fill={getColor(3, 0)} color={getColor(3, 0)} stroke={stroke(3, 0)} strokeWidth={getStrokeWidth(3, 0)} data-led-index={getLEDIndex(3, 0)} data-key-index={keyIndex(3, 0)} data-layer={layer} d="M60.552 206.576a5.257 5.257 0 0 1 5.256-5.257h52.794a5.257 5.257 0 0 1 5.256 5.257v40.851a5.257 5.257 0 0 1-5.256 5.257H65.808a5.257 5.257 0 0 1-5.256-5.257v-40.851z"/>
+        <path onClick={onClick} className="key" id="R2C15_keyshape" fill={getColor(2, 15)} color={getColor(2, 15)} stroke={stroke(2, 15)} strokeWidth={getStrokeWidth(2, 15)} data-led-index={getLEDIndex(2, 15)} data-key-index={keyIndex(2, 15)} data-layer={layer} d="M844.257 146.975v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.851z"/>
         <path onClick={onClick} className="key" id="R2C14_keyshape" fill={getColor(2, 14)} color={getColor(2, 14)} stroke={stroke(2, 14)} strokeWidth={getStrokeWidth(2, 14)} data-led-index={getLEDIndex(2, 14)} data-key-index={keyIndex(2, 14)} data-layer={layer} d="M785.197 146.975v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.851z"/>
         <path onClick={onClick} className="key" id="R2C13_keyshape" fill={getColor(2, 13)} color={getColor(2, 13)} stroke={stroke(2, 13)} strokeWidth={getStrokeWidth(2, 13)} data-led-index={getLEDIndex(2, 13)} data-key-index={keyIndex(2, 13)} data-layer={layer} d="M726.137 146.975v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.853c-2.883 0-5.256-2.373-5.256-5.256v-40.851h.001z"/>
         <path onClick={onClick} className="key" id="R2C12_keyshape" fill={getColor(2, 12)} color={getColor(2, 12)} stroke={stroke(2, 12)} strokeWidth={getStrokeWidth(2, 12)} data-led-index={getLEDIndex(2, 12)} data-key-index={keyIndex(2, 12)} data-layer={layer} d="M667.077 146.975v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.851z"/>
@@ -130,7 +131,7 @@ class Keymap extends React.Component {
         <path onClick={onClick} className="key" id="R2C2_keyshape" fill={getColor(2, 2)} color={getColor(2, 2)} stroke={stroke(2, 2)} strokeWidth={getStrokeWidth(2, 2)} data-led-index={getLEDIndex(2, 2)} data-key-index={keyIndex(2, 2)} data-layer={layer} d="M223.668 146.975v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.851z"/>
         <path onClick={onClick} className="key" id="R2C1_keyshape" fill={getColor(2, 1)} color={getColor(2, 1)} stroke={stroke(2, 1)} strokeWidth={getStrokeWidth(2, 1)} data-led-index={getLEDIndex(2, 1)} data-key-index={keyIndex(2, 1)} data-layer={layer} d="M164.61 146.975v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256v-40.851z"/>
         <path onClick={onClick} className="key" id="R2C0_keyshape" fill={getColor(2, 0)} color={getColor(2, 0)} stroke={stroke(2, 0)} strokeWidth={getStrokeWidth(2, 0)} data-led-index={getLEDIndex(2, 0)} data-key-index={keyIndex(2, 0)} data-layer={layer} d="M60.552 146.975a5.257 5.257 0 0 1 5.257-5.257h85.85a5.257 5.257 0 0 1 5.257 5.257v40.851a5.257 5.257 0 0 1-5.257 5.257h-85.85a5.257 5.257 0 0 1-5.257-5.257v-40.851z"/>
-        <path onClick={onClick} className="key" id="R1C15_keyshape" fill={getColor(2, 15)} color={getColor(2, 15)} stroke={stroke(2, 15)} strokeWidth={getStrokeWidth(2, 15)} data-led-index={getLEDIndex(2, 15)} data-key-index={keyIndex(2, 15)} data-layer={layer} d="M888.311 87.374a5.256 5.256 0 0 1 5.257-5.257h68.85a5.259 5.259 0 0 1 5.257 5.257v40.851a5.257 5.257 0 0 1-5.257 5.257h-68.85a5.256 5.256 0 0 1-5.257-5.257V87.374z"/>
+        <path onClick={onClick} className="key" id="R1C15_keyshape" fill={getColor(1, 15)} color={getColor(1, 15)} stroke={stroke(1, 15)} strokeWidth={getStrokeWidth(1, 15)} data-led-index={getLEDIndex(1, 15)} data-key-index={keyIndex(1, 15)} data-layer={layer} d="M888.311 87.374a5.256 5.256 0 0 1 5.257-5.257h68.85a5.259 5.259 0 0 1 5.257 5.257v100.452a5.257 5.257 0 0 1-5.257 5.257h-53.844a5.257 5.257 0 0 1-5.257-5.257v-49.094a5.25 5.25 0 0 0-5.25-5.251h-4.51a5.246 5.246 0 0 1-5.246-5.257s0 0 0 0v-40.85z"/>
         <path onClick={onClick} className="key" id="R1C14_keyshape" fill={getColor(1, 14)} color={getColor(1, 14)} stroke={stroke(1, 14)} strokeWidth={getStrokeWidth(1, 14)} data-led-index={getLEDIndex(1, 14)} data-key-index={keyIndex(1, 14)} data-layer={layer} d="M829.247 87.374v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256V87.374z"/>
         <path onClick={onClick} className="key" id="R1C13_keyshape" fill={getColor(1, 13)} color={getColor(1, 13)} stroke={stroke(1, 13)} strokeWidth={getStrokeWidth(1, 13)} data-led-index={getLEDIndex(1, 13)} data-key-index={keyIndex(1, 13)} data-layer={layer} d="M770.197 87.374v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.852c-2.883 0-5.256-2.373-5.256-5.256V87.374z"/>
         <path onClick={onClick} className="key" id="R1C12_keyshape" fill={getColor(1, 12)} color={getColor(1, 12)} stroke={stroke(1, 12)} strokeWidth={getStrokeWidth(1, 12)} data-led-index={getLEDIndex(1, 12)} data-key-index={keyIndex(1, 12)} data-layer={layer} d="M711.137 87.374v-.001c0-2.883 2.373-5.256 5.256-5.256h40.852c2.884 0 5.256 2.373 5.256 5.256v40.852c0 2.883-2.372 5.256-5.256 5.256h-40.853c-2.883 0-5.256-2.373-5.256-5.256V87.374h.001z"/>
@@ -210,16 +211,14 @@ class Keymap extends React.Component {
         <text fill={getContrastText(getColor(3, 4))} id="R3C4_t_extra" x="315.864" y="216.939">{getLabel(3, 4).extraLabel}</text>
         <text fill={getContrastText(getColor(3, 3))} id="R3C3_t_primary" x="256.806" y="230.984">{getLabel(3, 3).label}</text>
         <text fill={getContrastText(getColor(3, 3))} id="R3C3_t_extra" x="256.806" y="216.939">{getLabel(3, 3).extraLabel}</text>
-        <text fill={getContrastText(getColor(3, 2))} id="R3C2_t_primary" x="197.748" y="230.984">{getLabel(3, 2).label}</text>
-        <text fill={getContrastText(getColor(3, 2))} id="R3C2_t_extra" x="197.748" y="216.939">{getLabel(3, 2).extraLabel}</text>
+        <text fill={getContrastText(getColor(3, 0))} id="R3C2_t_primary" x="197.748" y="230.984">{getLabel(3, 2).label}</text>
+        <text fill={getContrastText(getColor(3, 0))} id="R3C2_t_extra" x="197.748" y="216.939">{getLabel(3, 2).extraLabel}</text>
+        <text fill={getContrastText(getColor(3, 2))} id="R3C1_t_primary" x="138.69" y="230.984">{getLabel(3, 1).label}</text>
+        <text fill={getContrastText(getColor(3, 2))} id="R3C1_t_extra" x="138.69" y="216.939">{getLabel(3, 1).extraLabel}</text>
         <text fill={getContrastText(getColor(3, 1))} id="R3C0_t_primary" x="67.69" y="230.984">{getLabel(3, 0).label}</text>
         <text fill={getContrastText(getColor(3, 1))} id="R3C0_t_extra" x="67.69" y="216.939">{getLabel(3, 0).extraLabel}</text>
-
-        
-        <text fill={getContrastText(getColor(2, 15))} id="R2C15_t_primary" x="851.394" y="171.383">{getLabel(1, 15).label}</text>
-        <text fill={getContrastText(getColor(2, 15))} id="R2C15_t_extra" x="851.385" y="157.338">{getLabel(1, 15).extraLabel}</text>
-
-
+        <text fill={getContrastText(getColor(2, 15))} id="R2C15_t_primary" x="851.394" y="171.383">{getLabel(2, 15).label}</text>
+        <text fill={getContrastText(getColor(2, 15))} id="R2C15_t_extra" x="851.395" y="157.338">{getLabel(2, 15).extraLabel}</text>
         <text fill={getContrastText(getColor(2, 14))} id="R2C14_t_primary" x="792.334" y="171.383">{getLabel(2, 14).label}</text>
         <text fill={getContrastText(getColor(2, 14))} id="R2C14_t_extra" x="792.335" y="157.338">{getLabel(2, 14).extraLabel}</text>
         <text fill={getContrastText(getColor(2, 13))} id="R2C13_t_primary" x="733.274" y="171.383">{getLabel(2, 13).label}</text>
@@ -244,11 +243,8 @@ class Keymap extends React.Component {
         <text fill={getContrastText(getColor(2, 1))} id="R2C1_t_extra" x="171.748" y="157.338">{getLabel(2, 1).extraLabel}</text>
         <text fill={getContrastText(getColor(2, 0))} id="R2C0_t_primary" x="67.69" y="171.383">{getLabel(2, 0).label}</text>
         <text fill={getContrastText(getColor(2, 0))} id="R2C0_t_extra" x="67.69" y="157.338">{getLabel(2, 0).extraLabel}</text>
-
-
-        <text fill={getContrastText(getColor(1, 15))} id="R1C15_t_primary" x="895.444" y="111.782">{getLabel(2, 15).label}</text>
-        <text fill={getContrastText(getColor(1, 15))} id="R1C15_t_extra" x="895.445" y="97.737">{getLabel(2, 15).extraLabel}</text>
-        
+        <text fill={getContrastText(getColor(1, 15))} id="R1C15_t_primary" x="895.444" y="111.782">{getLabel(1, 15).label}</text>
+        <text fill={getContrastText(getColor(1, 15))} id="R1C15_t_extra" x="895.445" y="97.737">{getLabel(1, 15).extraLabel}</text>
         <text fill={getContrastText(getColor(1, 14))} id="R1C14_t_primary" x="836.394" y="111.782">{getLabel(1, 14).label}</text>
         <text fill={getContrastText(getColor(1, 14))} id="R1C14_t_extra" x="836.385" y="97.737">{getLabel(1, 14).extraLabel}</text>
         <text fill={getContrastText(getColor(1, 13))} id="R1C13_t_primary" x="777.334" y="111.782">{getLabel(1, 13).label}</text>
@@ -310,4 +306,4 @@ class Keymap extends React.Component {
   }
 }
 
-export default Keymap;
+export default KeymapISO;
