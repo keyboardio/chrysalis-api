@@ -32,24 +32,60 @@ class Focus {
         return instance
     }
 
-    async find(...devices) {
-        let portList = await SerialPort.list()
-
-        let found_devices = []
-
-        for (let port of portList) {
-            for (let device of devices) {
-                if (parseInt("0x" + port.productId) == device.usb.productId &&
-                    parseInt("0x" + port.vendorId) == device.usb.vendorId) {
-                    let newPort = Object.assign({}, port)
-                    newPort.device = device
-                    found_devices.push(newPort)
-                }
-            }
+    async getCurrentkeyboardType(focus, device, port) {
+        let typeKeyboard;
+        let openPortPath, openPortDevice;
+        const anotherPortIsOpen =
+          focus._port && focus._port.isOpen && focus._port.path !== port.comName;
+        const currentPortIsOpen =
+          focus._port && focus._port.isOpen && focus._port.path === port.comName;
+     
+        if (focus._port && focus._port.isOpen) {
+          openPortPath = focus._port.path;
+          openPortDevice = this.device;
         }
-
-        return found_devices
-    }
+        if (anotherPortIsOpen) focus.close();
+        if (anotherPortIsOpen && !currentPortIsOpen)
+          await focus.open(port.comName, device);
+        typeKeyboard = await focus.getKeyboardType();
+        if (anotherPortIsOpen && !currentPortIsOpen) await focus.close();
+        if (anotherPortIsOpen) focus.open(openPortPath, openPortDevice);
+     
+        return typeKeyboard.trim();
+      }
+     
+      async find(...devices) {
+        let portList = await SerialPort.list();
+     
+        let found_devices = [];
+     
+        for (let port of portList) {
+          let keyboardType;
+          for (let device of devices) {
+            if (
+              parseInt("0x" + port.productId) == device.usb.productId &&
+              parseInt("0x" + port.vendorId) == device.usb.vendorId
+            ) {
+              if (device.info.product === "Raise") {
+                keyboardType = keyboardType
+                  ? keyboardType
+                  : await this.getCurrentkeyboardType(this, device, port);
+              }
+     
+              if (
+                device.info.product !== "Raise" ||
+                keyboardType === device.info.keyboardType
+              ) {
+                let newPort = Object.assign({}, port);
+                newPort.device = device;
+                found_devices.push(newPort);
+              }
+            }
+          }
+        }
+     
+        return found_devices;
+      }
 
     async open(device, info) {
         if (typeof device == "string") {
